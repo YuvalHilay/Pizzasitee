@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var dropdownTotal = 0;
+        function totalIt() {
+            var input = document.getElementsByName("product");
+            var total = 0;
+            for (var i = 0; i < input.length; i++) {
+                if (input[i].checked) {
+                    total += parseFloat(input[i].value);
+                }
+            }
+            document.getElementById("total").value = "₪" + total.toFixed(2);
+        }
+        function clickinner(mybtn) {
+            location.href = 'thankyou.html';
+        }
+        function clickinner2(mybtn) {
+            location.href = 'paynow.html';
+        }
+    </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+        </script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/aE6473u6xdk23id9/',
+                type: 'post',
+                data: $("#orders").serializeArray(),
+                success: function () {
+                    alert("Form Data Submitted :)")
+                },
+                error: function () {
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1>menu
+        </center>
+        <form id="orders" >
+            <fieldset>
+                <a href="houseof.html">back to home</a>
+
+                <table border=2 style="width:400" color=white;>
+                    <tr>
+
+                        <th>pizza</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>Pizza toppings for an additional fee <br> ( 10₪ per topping)</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="Margarita" name="product" value="60.00" onclick="totalIt()">
+                            <p>Margarita <br><br><br>
+                        </td>
+                        <td>Classic pizza with basil</td>
+                        <td>
+                            <p> 60₪
+                        </td>
+                        <td>
+                            <input type="checkbox" id="olives" name="product" value="10.00"
+                                onclick="totalIt()">olives<br>
+                            <input type="checkbox" id="Onion" name="product" value="10.00" onclick="totalIt()">
+                            Onion<br>
+                            <input type="checkbox" id="mushrooms" name="product" value="10.00" onclick="totalIt()">
+                            mushrooms<br>
+                            <input type="checkbox" id="corn" name="product" value="10.00" onclick="totalIt()"> corn<br>
+                            <input type="checkbox" id="pineapple" name="product" value="10.00" onclick="totalIt()">
+                            pineapple<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="Four cheeses" name="product" value="70.00" onclick="totalIt()">
+                            <p>Four cheeses <br><br><br>
+                        </td>
+                        <td>Pizza that combines 4 cheeses (mozzarella, berry, Camembert, parmesan)</td>
+                        <td>
+                            <p>70₪
+                        </td>
+                        <td>
+                            <input type="checkbox" id="olives" name="product" value="10.00"
+                                onclick="totalIt()">olives<br>
+                            <input type="checkbox" id="Onion" name="product" value="10.00" onclick="totalIt()">
+                            Onion<br>
+                            <input type="checkbox" id="mushrooms" name="product" value="10.00" onclick="totalIt()">
+                            mushrooms<br>
+                            <input type="checkbox" id="corn" name="product" value="10.00" onclick="totalIt()"> corn<br>
+                            <input type="checkbox" id="pineapple" name="product" value="10.00" onclick="totalIt()">
+                            pineapple<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="pepperoni" name="product" value="75.00" onclick="totalIt()">
+                            <p>pepperoni <br><br><br>
+                        </td>
+                        <td>Classic pepperoni pizza from homemade pepperoni</td>
+                        <td>
+                            <p>75₪
+                        </td>
+                        <td>
+                            <input type="checkbox" id="olives" name="product" value="10.00"
+                                onclick="totalIt()">olives<br>
+                            <input type="checkbox" id="Onion" name="product" value="10.00" onclick="totalIt()">
+                            Onion<br>
+                            <input type="checkbox" id="mushrooms" name="product" value="10.00" onclick="totalIt()">
+                            mushrooms<br>
+                            <input type="checkbox" id="corn" name="product" value="10.00" onclick="totalIt()"> corn<br>
+                            <input type="checkbox" id="pineapple" name="product" value="10.00" onclick="totalIt()">
+                            pineapple<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="Chicken BBQ" name="product" value="75.00" onclick="totalIt()">
+                            <p>Chicken BBQ <br><br><br>
+                        </td>
+                        <td>Grilled chicken disassembled into small pieces on the pizza</td>
+                        <td>
+                            <p>75₪
+                        </td>
+                        <td>
+                            <input type="checkbox" id="olives" name="product" value="10.00"
+                                onclick="totalIt()">olives<br>
+                            <input type="checkbox" id="Onion" name="product" value="10.00" onclick="totalIt()">
+                            Onion<br>
+                            <input type="checkbox" id="mushrooms" name="product" value="10.00" onclick="totalIt()">
+                            mushrooms<br>
+                            <input type="checkbox" id="corn" name="product" value="10.00" onclick="totalIt()"> corn<br>
+                            <input type="checkbox" id="pineapple" name="product" value="10.00" onclick="totalIt()">
+                            pineapple<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" id="custom" name="product" value="50.00" onclick="totalIt()">
+                            <p>custom <br><br><br>
+                        </td>
+                        <td>Custom-made pizza with toppings to choose from</td>
+                        <td>
+                            <p>50₪
+                        </td>
+                        <td>
+                            <input type="checkbox" id="olives" name="product" value="10.00"
+                                onclick="totalIt()">olives<br>
+                            <input type="checkbox" id="Onion" name="product" value="10.00" onclick="totalIt()">
+                            Onion<br>
+                            <input type="checkbox" id="mushrooms" name="product" value="10.00" onclick="totalIt()">
+                            mushrooms<br>
+                            <input type="checkbox" id="corn" name="product" value="10.00" onclick="totalIt()"> corn<br>
+                            <input type="checkbox" id="pineapple" name="product" value="10.00" onclick="totalIt()">
+                            pineapple<br>
+                        </td>
+                    </tr>
+                </table>
+                <h2>enter your details:</h2>
+                <table border=1 >
+                    <tr>
+                        <td >
+                            <h2>name</h2> <input type="text" id="name" name="name" ,value=" name" required style="width: 100px">
+                        </td>
+
+                        <td>
+                            <h2>last name</h2> <input type="text" id="last name" name="lastname" ,value=" lastname"
+                                required>
+                        </td>
+
+                        
+                        <td>
+                            <h2>street</h2><input type="text" id="street" name="street" ,value=" street" required>
+                        </td>
+                        <td>
+                            <h2>street number</h2><input type="text" id="streetn" name="streetnumber" ,value=" streetnumber"
+                                required>
+                        </td>
+                        <td>
+                            <h2>phone number</h2><input type="text" id="streetph" name="phone" ,value=" phone"
+                                required>
+                        </td>
+                        <td>
+                            <h2>city</h2>
+                            <select id="select_id" name="town" required>
+                                <option value="Haifa">Haifa</option>
+                                <option value="Nofit">Nofit</option>
+                                <option value="Tivon">Tivon</option>
+                                <option value="Nesher">Nesher</option>
+                            </select>
+                </table>
+                <label>
+                    Total
+                    <input value="₪0.00" readonly="readonly" type="text" name="total" id="total" />
+                </label>
+            </fieldset>
+            <input value="Reset" type="reset" />
+        </form>
+        <button onClick="SubForm()" >confirm order</button> <br>
+        <button class="btn btn-sm btn-success mycustom_btn" onClick="javascript:clickinner(this);">pay to deliver man</button>
+        <button class="btn btn-sm btn-success mycustom_btn2" onClick="javascript:clickinner2(this);">pay now</button>
+    </div>
+</body>
+
+</html>

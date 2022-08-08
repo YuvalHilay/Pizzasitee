@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let town_arr = [];
+        let Haifa_street_arr = [];
+        let Haifa_num_arr = [];
+        let Nofit_street_arr = [];
+        let Nofit_num_arr = [];
+        let Nesher_street_arr = [];
+        let Nesher_num_arr = [];
+        let Tivon_street_arr = [];
+        let Tivon_num_arr = [];
+        function init() {
+        }
+        function add() {
+            let flag = 0;
+            let town = document.querySelector("#select_id").value;
+            document.querySelector("#id_par").innerHTML += town + "<br>";
+            let street = document.querySelector("#street_input").value;
+            let num = document.querySelector("#num_input").value;
+            for (let i = 0; i < town_arr.length; i++) {
+                if (town_arr[i] == town) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                town_arr.push(town);
+            }
+            if (town == "Haifa") {
+                Haifa_street_arr.push(street);
+                Haifa_num_arr.push(num);
+            }
+            if (town == "Nofit") {
+                Nofit_street_arr.push(street);
+                Nofit_num_arr.push(num);
+            }
+            if (town == "Tivon") {
+                Tivon_street_arr.push(street);
+                Tivon_num_arr.push(num);
+            }
+            if (town == "Nesher") {
+                Nesher_street_arr.push(street);
+                Nesher_num_arr.push(street);
+            }
+            console.log(town_arr);
+            console.log(Nesher_street_arr);
+        }
+
+        function calc_route() {
+            let boo=document.querySelector("#id_par2");
+            for (let j = 0; j < town_arr.length; j++) {
+                if (town_arr[j] == "Tivon") {
+                     boo.innerHTML+= "**"+town_arr[j] +"- closet location drive first"+  "<br>";
+                    for (let k = 0; k < Tivon_street_arr.length; k++) {
+                        boo.innerHTML+= town_arr[j] + " - ";
+                        boo.innerHTML += Tivon_street_arr[k] + "<br>";
+                        boo.innerHTML += Tivon_num_arr[k] + "<br>";
+                    }
+                    town_arr.splice(j, 1);
+                    boo.innerHTML+="<br>"
+                }
+            }
+            for (let j = 0; j < town_arr.length; j++) {
+                if (town_arr[j] == "Nofit") {
+                     boo.innerHTML+= "**"+town_arr[j] +"- close location"+ "<br>";
+                    for (let k = 0; k < Nofit_street_arr.length; k++) {
+                        boo.innerHTML+= town_arr[j] + " - ";
+                        boo.innerHTML += Nofit_street_arr[k] + "<br>";
+                        boo.innerHTML += Nofit_num_arr[k] + "<br>";
+                    }
+                    town_arr.splice(j, 1);
+                    boo.innerHTML+="<br>"
+                }
+            }
+            for (let j = 0; j < town_arr.length; j++) {
+                if (town_arr[j] == "Nesher") {
+                     boo.innerHTML+= "**"+town_arr[j] + "- far location" + "<br>";
+                    for (let k = 0; k < Nesher_street_arr.length; k++) {
+                        boo.innerHTML+= town_arr[j] + " - ";
+                        boo.innerHTML += Nesher_street_arr[k] + "<br>";
+                        boo.innerHTML += Nesher_num_arr[k] + "<br>";
+                    }
+                    town_arr.splice(j, 1);
+                    boo.innerHTML+="<br>"
+                }
+            }
+            for (let j = 0; j < town_arr.length; j++) {
+                if (town_arr[j] == "Haifa") {
+                     boo.innerHTML+= "**"+town_arr[j] +"- far location drive last" + "<br>";
+                    for (let k = 0; k < Haifa_street_arr.length; k++) {
+                        boo.innerHTML+= town_arr[j] + " - ";
+                        boo.innerHTML += Haifa_street_arr[k] + "<br>";
+                        boo.innerHTML += Haifa_num_arr[k] + "<br>";
+                    }
+                    town_arr.splice(j, 1);
+                    boo.innerHTML+="<br>"
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <h1>Add new reservation</h1>
+        <form onsubmit="add(); return false;">
+            
+            <label>Choose town</label>
+            <select id="select_id" name="town" required>
+                <option value="Haifa">Haifa</option>
+                <option value="Nofit">Nofit</option>
+                <option value="Tivon">Tivon</option>
+                <option value="Nesher">Nesher</option>
+            </select>
+            <br>
+            <br>
+            <label>street:</label>
+            <input type="text" id="street_input" name="street" required>
+            <br>
+            <label>num:</label>
+            <input type="text" id="num_input" name="number" required>
+            <br>
+            <button class="button button2" , type="submit"> Add reservation</button>
+        </form>
+        <br>
+        <br>
+        <h3>List of cities in order:</h3>
+        <p id="id_par"></p>
+        <br>
+        <br>
+        <button class="button button1", onclick="calc_route()">route calculation</button>
+        <br>
+        <p id="id_par2"></p>
+        <br>
+        <img class="pic3" src="images/pic3.jpg" width="250">
+        <br>
+        <a href="https://www.waze.com/en/live-map/directions?utm_source=website&utm_medium=homepage&utm_campaign=iframe+module" target="_blank">lets drive with waze</a>
+        <br>
+        <h3>drive safe</h3>
+        <a href="home.html">back to home</a>
+    </div>
+</body>
+
+</html>

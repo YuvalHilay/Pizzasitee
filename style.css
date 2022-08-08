@@ -1,0 +1,75 @@
+body{
+  background-image: url('pizza.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: rgb(0, 0, 0);
+  font-family:'Fantasy', Papyrus;
+  margin:0;
+  text-align: center;
+  background-color: #cccccc;
+}
+h1 {
+  font-size: 60px;
+}
+
+
+
+
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+  
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+    
+
+
+
+
+   
+
+}
+.container{
+    width: 950px;
+    margin:0 auto;
+    background: #FAFAD2;
+    padding: 8px;
+    min-height: 930px;
+}
+.pic1{
+    float: right;
+    margin-left: 8px;
+    border: 2px solid black;
+}
+.pic2{
+    float: right;
+    margin-left: 64px;
+    border: 2px solid white;
+}
+.pic3{
+    float: right;
+    margin-left: 64px;
+    border: 2px solid white;
+}
+.button {
+  background-color: #555555; /* Green */
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 200px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button2 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
